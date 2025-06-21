@@ -1,49 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Rafuny's Hot Castle</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rafunys Hot Castle</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="container" id="start-screen">
-    <h1>🔥 Bienvenidos al Castillo 🔥</h1>
-    <input type="text" id="player1" placeholder="Nombre jugador 1" />
-    <select id="gender1">
-      <option>Hombre</option>
-      <option>Mujer</option>
-    </select>
-    <input type="text" id="player2" placeholder="Nombre jugador 2" />
-    <select id="gender2">
-      <option>Hombre</option>
-      <option>Mujer</option>
-    </select>
-    <div class="speed-options">
-      <label><input type="radio" name="speed" value="slow" checked /> 🐢</label>
-      <label><input type="radio" name="speed" value="fast" /> ⚡</label>
-    </div>
-    <button onclick="startGame()">Entrar al Castillo 🔥</button>
-  </div>
-  <div class="game" id="game-screen" style="display: none;"></div>
+    <div id="game">Cargando juego...</div>
+
+    <script src="js/script.js"></script>
+    <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+        const errorBox = document.createElement('div');
+        errorBox.style.position = 'fixed';
+        errorBox.style.bottom = '0';
+        errorBox.style.left = '0';
+        errorBox.style.width = '100%';
+        errorBox.style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
+        errorBox.style.color = 'white';
+        errorBox.style.fontFamily = 'monospace';
+        errorBox.style.padding = '10px';
+        errorBox.style.zIndex = '9999';
+        errorBox.innerText = `⚠️ Error: ${message} → Línea: ${lineno}, Columna: ${colno}`;
+        document.body.appendChild(errorBox);
+        return false;
+    };
+    </script>
 </body>
 </html>
-<script>
-  // Mostrar errores directamente en pantalla
-  window.onerror = function(message, source, lineno, colno, error) {
-    const errorBox = document.createElement('div');
-    errorBox.style.position = 'fixed';
-    errorBox.style.bottom = '0';
-    errorBox.style.left = '0';
-    errorBox.style.width = '100%';
-    errorBox.style.backgroundColor = 'rgba(255, 0, 0, 0.9)';
-    errorBox.style.color = 'white';
-    errorBox.style.fontFamily = 'monospace';
-    errorBox.style.padding = '10px';
-    errorBox.style.zIndex = '9999';
-    errorBox.innerText = `⚠️ Error: ${message} \n→ Línea: ${lineno}, Columna: ${colno}`;
-    document.body.appendChild(errorBox);
-    return false;
-  };
-</script>
