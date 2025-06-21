@@ -1,69 +1,93 @@
 
-document.getElementById("startButton").addEventListener("click", () => {
-  document.getElementById("welcomeForm").style.display = "none";
-  document.getElementById("gameContainer").style.display = "flex";
-  iniciarNivel();
-});
-
-let nivelActual = 1;
-let pruebasPorNivel = {
+// Rafuny's Hot Castle - script.js definitivo con pruebas originales por niveles
+const niveles = {
   1: [
-    "Caricias suaves por todo el cuerpo durante 2 minutos.",
-    "Masaje en espalda o cuello durante 3 minutos.",
-    "Mirarse fijamente sin hablar durante 60 segundos.",
-    "Besos lentos por el cuello.",
-    "Rozar piel con pluma o tela suave durante 2 minutos."
+    "Bésale el cuello durante 2 minutos sin parar.",
+    "Lame muy lentamente su ombligo.",
+    "Quita una prenda con los dientes.",
+    "Realiza un baile sexy mientras te vas desnudando.",
+    "Chupa lentamente un dedo de su pie.",
+    "Acaricia sus genitales por encima de la ropa durante 1 minuto.",
+    "Simula una mamada o lamida con la ropa puesta.",
+    "Mastúrbate suavemente frente a tu pareja sin tocarte los genitales.",
+    "Sube una pierna tuya sobre su cuerpo y muévete sensualmente.",
+    "Ponle una prenda tuya interior (bragas o calzoncillo) sobre la cabeza o cuello.",
+    "Siéntate sobre su cara sin contacto real (a 1 cm).",
+    "Lame su oreja de forma muy provocativa.",
+    "Usa un hielo para pasar por su vientre y muslos.",
+    "Acaricia su trasero por encima de la ropa con ambas manos.",
+    "Hazle un masaje sensual en los muslos internos.",
+    "Frota tus pezones contra alguna parte de su cuerpo.",
+    "Cruza las piernas sobre su torso como si le fueras a atrapar.",
+    "Sácale la lengua y úsala para tentarle a distancia.",
+    "Siéntate encima en ropa interior y muévete lentamente.",
+    "Ponte un disfraz sexy y aparece como si nada."
   ],
   2: [
-    "Atar manos a la espalda y besar sin usar las manos.",
-    "Lamer lentamente el torso o espalda.",
-    "Probar temperaturas (cubito de hielo o algo caliente).",
-    "Desnudar lentamente una prenda sin hablar.",
-    "Lamer con suavidad el lóbulo de la oreja mientras se susurra algo caliente."
+    "Chupa un dedo del pie lentamente y mírale a los ojos.",
+    "Ponle nata/chocolate en una parte del cuerpo y límpiala con la lengua.",
+    "Bebe una bebida con alcohol de su ombligo.",
+    "Lame sus testículos sin usar las manos.",
+    "Da un mordisco suave en la parte interna del muslo.",
+    "Hazle sexo oral sin que acabe durante 2 minutos.",
+    "Introduce un dedo en su boca y dile que lo chupe.",
+    "Dale un azote con la mano en el trasero.",
+    "Usa un objeto del entorno como vibrador (cepillo eléctrico, mango de cuchara...).",
+    "Dale un beso profundo en el ano.",
+    "Desliza cubitos de hielo por sus pezones.",
+    "Simula penetración con un objeto no sexual.",
+    "Usa el palo de crucifixión para inmovilizarle las piernas.",
+    "Hazle lamer algo dulce de tus pezones.",
+    "Métete un dedo en el ano y juega con él suavemente mientras le miras.",
+    "Lame cada uno de sus dedos de los pies.",
+    "Chupa los pezones mientras le acaricias entre las piernas.",
+    "Mastúrbale mientras le das alcohol en la boca.",
+    "Métete hielo en la boca y hazle sexo oral sin sacarlo.",
+    "Pásale un consolador por la cara lentamente sin dejarle tocarlo."
   ],
+
   3: [
-    "Utilizar juguete vibrador en cualquier parte del cuerpo durante 1 min.",
-    "Lamer lentamente la parte interna del muslo sin tocar genitales.",
-    "Dejar que uno se siente en el otro y se mueva a placer.",
-    "Atar tobillos y besar desde los pies hacia arriba.",
-    "Simular sexo oral sin llegar a tocar genitales (teasing)."
+    "Átale las manos con cuerda y juega con sus pezones.",
+    "Mastúrbale mientras llevas un disfraz de dominatrix.",
+    "Ponle el tentáculo vibrador entre los muslos sin meterlo.",
+    "Dale azotes con la fusta mientras se toca.",
+    "Lame todas las partes de su cuerpo sin hablar.",
+    "Ponle una mordaza y acaríciale el ano.",
+    "Haz que se quede de rodillas mientras le acaricias suavemente los genitales.",
+    "Lame su trasero sin usar las manos.",
+    "Juega con su ano con un dedo, sin llegar a penetrar.",
+    "Sujétale del gancho del techo y bésale el pecho.",
+    "Hazle chupar el tentáculo como si fuera real.",
+    "Realiza una felación mientras está con los ojos vendados.",
+    "Cógelo de las caderas y simula una cabalgada sin ropa.",
+    "Hazle un masaje con aceite caliente por todo el cuerpo.",
+    "Dale a elegir entre tentáculo o vibrador... y úsalo en él/ella.",
+    "Lame sus pies mientras se masturba.",
+    "Saca la lengua y juega con su ano sin tocar con las manos.",
+    "Atado y de pie: dale caricias suaves con un pañuelo.",
+    "Mueve tus genitales por su cara sin permitirle tocar.",
+    "Usa el palo para inmovilizarle los brazos, y empieza a lamerle el torso lentamente."
   ],
   4: [
-    "Elige una postura sexual diferente y mantenerla 5 minutos.",
-    "Practicar sexo oral sin reciprocidad durante 5 minutos.",
-    "Atar al otro y explorar todo su cuerpo.",
-    "Usar el gancho del techo o crucifixión con creatividad y seguridad.",
-    "Cumple una orden dada sin rechistar. Cualquier orden."
+    "Amárrale de pies y manos con el palo y usa el gancho para suspender.",
+    "Ponle la mordaza y hazle sexo oral hasta el borde del orgasmo... y para.",
+    "Ordénale masturbarse mirándote a los ojos mientras le azotas con la fusta.",
+    "Estimula el ano con el tentáculo.",
+    "Mastúrbale con el vibrador hasta que no aguante más.",
+    "Azótale hasta que diga tu nombre 3 veces.",
+    "Obligación: no puede correrse hasta que tú se lo permitas.",
+    "Crea una escena de dominación completa con tu disfraz favorito.",
+    "Chúpale lentamente todo el cuerpo sin dejarle moverse.",
+    "Siéntate sobre su cara con fuerza y dale órdenes.",
+    "Introduce el consolador y estimula con vibrador a la vez.",
+    "Mastúrbale atado con los ojos vendados.",
+    "Simula que eres otra persona y actúa diferente.",
+    "Hazle correrse con una sola mano y nada más.",
+    "Lame su ano mientras usas el vibrador sobre sus genitales.",
+    "Métete dos dedos en el ano mientras usas juguetes en tu pareja.",
+    "Hazle llorar de placer (literalmente, haz que se deshaga).",
+    "Mastúrbate sobre él/ella mientras está amarrado/a.",
+    "Usa el tentáculo como látigo y después introdúcelo.",
+    "Oblígale a correrse... y luego a seguir."
   ]
 };
-let pruebasRestantes = [];
-let velocidad = "rapido";
-
-function iniciarNivel() {
-  velocidad = document.querySelector("input[name='speed']:checked").value;
-  const total = velocidad === "rapido" ? 5 : 10;
-  pruebasRestantes = [...pruebasPorNivel[nivelActual]];
-  mostrarPrueba();
-}
-
-function mostrarPrueba() {
-  if (pruebasRestantes.length === 0) {
-    nivelActual++;
-    if (nivelActual > 4) {
-      document.getElementById("gameContainer").innerHTML = "<h1>🔥 Has conquistado el castillo 🔥</h1>";
-      return;
-    } else {
-      iniciarNivel();
-      return;
-    }
-  }
-
-  const index = Math.floor(Math.random() * pruebasRestantes.length);
-  const prueba = pruebasRestantes.splice(index, 1)[0];
-
-  document.getElementById("gameContainer").innerHTML = `
-    <h2>Nivel ${nivelActual} - ¡Vamos allá!</h2>
-    <p style="background: deeppink; padding: 15px; border-radius: 10px;">${prueba}</p>
-    <button onclick="mostrarPrueba()" style="background: deeppink; padding: 10px 20px; border-radius: 10px; border: none; color: white; margin-top: 10px;">Siguiente prueba</button>
-  `;
-}

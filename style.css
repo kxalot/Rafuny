@@ -1,70 +1,41 @@
 
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: black;
-  color: white;
-  background-image: url('fondo.jpg');
-  background-size: cover;
-  background-position: center;
+    background: url('logo-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-#welcomeForm {
-  position: relative;
-  margin-top: 160px;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 40px auto;
 }
 
-#welcomeForm h1 {
-  color: white;
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-#welcomeForm input,
-#welcomeForm select {
-  margin: 10px;
-  padding: 10px;
-  width: 80%;
-  font-size: 1rem;
+input, select {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
 }
 
-.mode-selector {
-  margin: 10px 0;
-}
-
-#startButton {
-  background-color: deeppink;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-#gameContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.75);
-  border-radius: 20px;
-  margin: 160px auto 0;
-  max-width: 500px;
-  padding: 20px;
-  z-index: 2;
-  position: relative;
-}
-
-#bgLogo {
-  width: 100%;
-  max-height: 40vh;
-  object-fit: contain;
+button {
+    padding: 10px 20px;
+    background-color: #ff007f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
