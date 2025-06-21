@@ -1,53 +1,40 @@
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  color: white;
   background-image: url('background.jpg');
   background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
-  background-position: center top;
-  color: white;
+  background-color: #000;
+}
+
+#welcome-screen, .main-screen {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 55vh;
   text-align: center;
 }
 
-#game-container {
-  padding-top: 300px;
-}
-
-.screen {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  margin: 0 auto;
-  border-radius: 20px;
-  max-width: 600px;
-}
-
-.input-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.input-row input, .input-row select {
-  padding: 8px;
-  margin: 0 5px;
-  font-size: 16px;
-}
-
-.speed-select label {
-  margin: 0 10px;
-  font-size: 24px;
-}
-
-.button-row button {
-  background: #ff00aa;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 16px;
+input, select, button {
+  padding: 10px;
+  margin: 5px;
   border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #ff00aa;
+  color: white;
   cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
 }
 
 .hidden {

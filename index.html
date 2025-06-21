@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,41 +7,38 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="game-container">
-    <div id="intro-screen" class="screen">
+  <div id="game">
+    <div class="welcome-screen">
       <h1>🔥 Bienvenidos al Castillo 🔥</h1>
-      <div class="input-row">
-        <input type="text" id="player1-name" placeholder="Nombre jugador 1" />
-        <select id="player1-gender">
-          <option value="hombre">Hombre</option>
-          <option value="mujer">Mujer</option>
+      <div class="inputs">
+        <input type="text" id="player1" placeholder="Nombre jugador 1" />
+        <select id="gender1">
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+        </select>
+        <input type="text" id="player2" placeholder="Nombre jugador 2" />
+        <select id="gender2">
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
         </select>
       </div>
-      <div class="input-row">
-        <input type="text" id="player2-name" placeholder="Nombre jugador 2" />
-        <select id="player2-gender">
-          <option value="hombre">Hombre</option>
-          <option value="mujer">Mujer</option>
-        </select>
-      </div>
-      <div class="speed-select">
-        <label><input type="radio" name="speed" value="lento" checked />🐢</label>
-        <label><input type="radio" name="speed" value="rapido" />⚡</label>
+      <div class="mode-select">
+        <label><input type="radio" name="mode" value="lento" checked /> 🐢</label>
+        <label><input type="radio" name="mode" value="rapido" /> ⚡</label>
       </div>
       <button onclick="startGame()">Entrar al Castillo 🔥</button>
     </div>
 
-    <div id="main-screen" class="screen hidden">
-      <h2 id="level-title">Nivel 1</h2>
-      <h3 id="turn-info">Turno de...</h3>
-      <p id="challenge-text">Desafío</p>
-      <div class="button-row">
+    <div class="main-screen hidden">
+      <h2 id="level-title"></h2>
+      <p id="turn-label"></p>
+      <p id="challenge-text"></p>
+      <div class="buttons">
         <button onclick="nextChallenge()">Siguiente prueba</button>
         <button onclick="resetGame()">Reiniciar Castillo 🏰</button>
       </div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
