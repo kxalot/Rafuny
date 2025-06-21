@@ -1,73 +1,68 @@
 
-const pruebas = {
-    1: [
-        "Caricias suaves por todo el cuerpo durante 2 minutos.",
-        "Masaje en los pies con aceite.",
-        "Beso en el cuello mientras el otro está con los ojos cerrados.",
-        "Miradas fijas durante 1 minuto sin hablar.",
-        "Masaje sensual en la espalda durante 2 minutos."
-    ],
-    2: [
-        "Desliza una pluma por su cuerpo durante 2 minutos.",
-        "Lamer lentamente el cuello y orejas.",
-        "Dale órdenes suaves y sensuales durante 3 minutos.",
-        "Utiliza un antifaz para privar de la vista durante una ronda.",
-        "Besa todo el torso evitando los genitales."
-    ],
-    3: [
-        "Ata sus muñecas y juega con caricias y mordiscos.",
-        "Prueba un consolador vibrador en una parte inesperada.",
-        "Simula un interrogatorio sensual con castigos si no responde.",
-        "Hazle gemir sin tocar los genitales.",
-        "Cruza los cuerpos y juega con el calor de la piel."
-    ],
-    4: [
-        "Suspensión ligera con cuerdas o gancho (si es seguro).",
-        "Juega con la fusta marcando ritmo.",
-        "Simula una escena de sumisión total.",
-        "Utiliza el crucifijo para inmovilizar totalmente.",
-        "Domina con lenguaje sucio y órdenes explícitas."
-    ]
+const pruebasPorNivel = {
+  1: [
+    "Caricias suaves por todo el cuerpo durante 2 minutos.",
+    "Besos en el cuello sin usar las manos.",
+    "Masaje relajante en la espalda durante 3 minutos.",
+    "Miradas fijas durante 1 minuto sin reírse.",
+    "Juega con los dedos de tu pareja mientras susurras algo bonito."
+  ],
+  2: [
+    "Venda los ojos de tu pareja y bésala en distintos lugares.",
+    "Atar suavemente las muñecas y dar un masaje sensual.",
+    "Lamer con hielo el lóbulo de la oreja.",
+    "Jugar con plumas en la zona de los muslos.",
+    "Simula un interrogatorio erótico con contacto suave."
+  ],
+  3: [
+    "Azota suavemente con la fusta las zonas erógenas.",
+    "Usa un vibrador en zonas no genitales primero.",
+    "Desliza una cuerda por el cuerpo desnudo de tu pareja.",
+    "Prueba el rol dominante con palabras y contacto.",
+    "Haz que tu pareja permanezca quieta mientras la exploras."
+  ],
+  4: [
+    "Crucifixión en palo con estimulación alterna.",
+    "Uso del tentáculo en zona íntima durante 5 minutos.",
+    "Suspensión suave en el gancho con besos.",
+    "Escena completa de sumisión con palabra de seguridad.",
+    "Juega con lubricante caliente y frío en los genitales."
+  ]
 };
 
-let currentLevel = 1;
-let completedTests = [];
-let mode = "lento";
-let maxPerLevel = 10;
+let nivel = 1;
+let indicePrueba = 0;
+let pruebasNivelActual = [];
 
-function startGame() {
-    document.getElementById("form-container").classList.add("hidden");
-    document.getElementById("game-container").classList.remove("hidden");
-    mode = document.querySelector('input[name="mode"]:checked').value;
-    maxPerLevel = mode === "rapido" ? 5 : 10;
-    nextTest();
+function iniciarJuego() {
+  document.getElementById("pantallaInicio").style.display = "none";
+  document.getElementById("pantallaJuego").style.display = "block";
+  avanzarNivel();
 }
 
-function nextTest() {
-    const levelTests = pruebas[currentLevel].filter(t => !completedTests.includes(t));
-    if (levelTests.length === 0) {
-        currentLevel++;
-        if (!pruebas[currentLevel]) {
-            document.getElementById("level-title").innerText = "🎉 ¡Fin del juego! 🎉";
-            document.getElementById("test-box").innerText = "";
-            return;
-        }
-        completedTests = [];
+function avanzarNivel() {
+  pruebasNivelActual = [...pruebasPorNivel[nivel]];
+  indicePrueba = 0;
+  mostrarPrueba();
+}
+
+function mostrarPrueba() {
+  if (indicePrueba >= pruebasNivelActual.length) {
+    nivel++;
+    if (!pruebasPorNivel[nivel]) {
+      document.getElementById("nivelTitulo").innerText = "¡Has completado el castillo!";
+      document.getElementById("pruebaTexto").innerText = "";
+      return;
     }
-    const randomIndex = Math.floor(Math.random() * pruebas[currentLevel].length);
-    const prueba = pruebas[currentLevel][randomIndex];
-    if (!completedTests.includes(prueba)) {
-        completedTests.push(prueba);
-    }
-    if (completedTests.length >= maxPerLevel) {
-        currentLevel++;
-        completedTests = [];
-        if (!pruebas[currentLevel]) {
-            document.getElementById("level-title").innerText = "🎉 ¡Fin del juego! 🎉";
-            document.getElementById("test-box").innerText = "";
-            return;
-        }
-    }
-    document.getElementById("level-title").innerText = `Nivel ${currentLevel} - ¡Vamos allá!`;
-    document.getElementById("test-box").innerText = prueba;
+    avanzarNivel();
+    return;
+  }
+
+  document.getElementById("nivelTitulo").innerText = `Nivel ${nivel} - ¡Vamos allá!`;
+  document.getElementById("pruebaTexto").innerText = pruebasNivelActual[indicePrueba];
+}
+
+function siguientePrueba() {
+  indicePrueba++;
+  mostrarPrueba();
 }
