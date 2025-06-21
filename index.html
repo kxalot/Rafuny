@@ -2,37 +2,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rafuny's Hot Castle</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafuny's Hot Castle</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <img src="logo-bg.jpg" alt="Logo" class="logo" />
-    <h1>🔥 Bienvenidos al Castillo 🔥</h1>
-    <div class="input-group">
-      <input type="text" id="player1" placeholder="Nombre jugador 1" />
-      <select id="gender1">
-        <option value="hombre">Hombre</option>
-        <option value="mujer">Mujer</option>
-      </select>
+    <div class="container">
+        <h1>🔥 Bienvenidos al Castillo 🔥</h1>
+        <div class="form-group">
+            <input type="text" id="player1" placeholder="Nombre jugador 1">
+            <select id="gender1">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" id="player2" placeholder="Nombre jugador 2">
+            <select id="gender2">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+        </div>
+        <div class="form-group speed">
+            <label><input type="radio" name="speed" value="lento" checked> 🐢</label>
+            <label><input type="radio" name="speed" value="rapido"> ⚡</label>
+        </div>
+        <button id="startBtn">Entrar al Castillo 🔥</button>
     </div>
-    <div class="input-group">
-      <input type="text" id="player2" placeholder="Nombre jugador 2" />
-      <select id="gender2">
-        <option value="hombre">Hombre</option>
-        <option value="mujer">Mujer</option>
-      </select>
-    </div>
-    <div class="speed-group">
-      <input type="radio" id="slow" name="speed" value="lento" checked />
-      <label for="slow">🐢</label>
-      <input type="radio" id="fast" name="speed" value="rapido" />
-      <label for="fast">⚡</label>
-    </div>
-    <button onclick="entrarAlCastillo()">Entrar al Castillo 🔥</button>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
