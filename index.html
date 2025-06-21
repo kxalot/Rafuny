@@ -3,31 +3,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rafuny's Hot Castle</title>
+  <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="welcome-screen">
-    <form id="entryForm">
-      <h2>🔥 Bienvenidos al Castillo 🔥</h2>
-      <input type="text" placeholder="K" required />
-      <select>
-        <option>Hombre</option>
-        <option>Mujer</option>
-      </select>
-      <input type="text" placeholder="F" required />
-      <select>
-        <option>Hombre</option>
-        <option>Mujer</option>
-      </select>
-      <div class="mode-select">
-        <label><input type="radio" name="speed" value="slow" /> 🐢</label>
-        <label><input type="radio" name="speed" value="fast" checked /> ⚡</label>
-      </div>
-      <button type="submit">Entrar al Castillo 🔥</button>
-    </form>
+  <div id="logoContainer">
+    <img src="fondo.jpg" alt="Rafuny's" id="bgLogo">
   </div>
+  <div id="welcomeForm">
+    <h1>🔥 Bienvenidos al Castillo 🔥</h1>
+    <input type="text" placeholder="Jugador 1" id="player1Name" />
+    <select id="player1Gender">
+      <option value="hombre">Hombre</option>
+      <option value="mujer">Mujer</option>
+    </select>
+    <input type="text" placeholder="Jugador 2" id="player2Name" />
+    <select id="player2Gender">
+      <option value="hombre">Hombre</option>
+      <option value="mujer">Mujer</option>
+    </select>
+    <div class="mode-selector">
+      <label><input type="radio" name="speed" value="lento" /> 🐢</label>
+      <label><input type="radio" name="speed" value="rapido" checked /> ⚡</label>
+    </div>
+    <button id="startButton">Entrar al Castillo 🔥</button>
+  </div>
+  <div id="gameContainer" style="display: none;"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
