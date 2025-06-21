@@ -2,42 +2,48 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg');
+    background-image: url('1000069537.jpg');
     background-size: cover;
     background-position: top center;
-    color: white;
-    text-align: center;
-}
-
-.background-overlay {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 20px;
+    background-repeat: no-repeat;
     min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
 }
 
-#menu, #game {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
+.container {
+    width: 100%;
     padding: 20px;
-    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
     max-width: 400px;
+    margin: 20px auto;
 }
 
 button {
-    background-color: #ff4081;
+    background-color: #ff33cc;
     border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
     color: white;
-    font-size: 1em;
-    margin: 10px 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .hidden {
     display: none;
 }
 
-.hidden-logo {
-    display: none;
+.mode {
+    margin: 10px;
 }
