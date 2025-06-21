@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego - Rafuny's</title>
+  <style>
+    body {
+      margin: 0;
+      background: url('background.jpg') no-repeat center top;
+      background-size: cover;
+      color: white;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .game-container {
+      background-color: rgba(0,0,0,0.6);
+      border-radius: 20px;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .test {
+      margin: 10px 0;
+      padding: 10px;
+      background: #ff007f;
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background: #ff0055;
+      border: none;
+      border-radius: 10px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h2>Nivel 1 - ¡Vamos allá!</h2>
+    <div id="testContainer"></div>
+    <button onclick="nextTest()">Siguiente prueba</button>
+  </div>
+  <script>
+    const pruebasNivel1 = [
+      "Caricias suaves por todo el cuerpo durante 2 minutos.",
+      "Juega con la lengua por el cuello y oreja de tu pareja.",
+      "Masaje con aceite en la espalda, sin hablar.",
+      "Utiliza un objeto frío y otro caliente sobre la piel.",
+      "Lame el pecho de tu pareja sin tocar con las manos."
+    ];
+    let index = 0;
+    function nextTest() {
+      const container = document.getElementById("testContainer");
+      if (index < pruebasNivel1.length) {
+        container.innerHTML = `<div class='test'>${pruebasNivel1[index]}</div>`;
+        index++;
+      } else {
+        container.innerHTML = "<strong>Nivel completado. Próximamente Nivel 2 😈</strong>";
+      }
+    }
+    window.onload = nextTest;
+  </script>
+</body>
+</html>
