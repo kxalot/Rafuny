@@ -1,34 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rafuny's Hot Castle</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="logo"><img src="logo-bg.jpg" alt="Rafuny's Logo"></div>
     <div class="container">
         <h1>🔥 Bienvenidos al Castillo 🔥</h1>
-        <div class="form-group">
-            <input type="text" id="player1Name" placeholder="Nombre jugador 1">
-            <select id="player1Gender">
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
+        <div class="form">
+            <input type="text" id="jugador1" placeholder="Nombre jugador 1" />
+            <select id="genero1">
+                <option>Hombre</option>
+                <option>Mujer</option>
             </select>
-        </div>
-        <div class="form-group">
-            <input type="text" id="player2Name" placeholder="Nombre jugador 2">
-            <select id="player2Gender">
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
+            <input type="text" id="jugador2" placeholder="Nombre jugador 2" />
+            <select id="genero2">
+                <option>Hombre</option>
+                <option>Mujer</option>
             </select>
+            <div class="velocidad">
+                <label><input type="radio" name="speed" value="lento" checked />🐢</label>
+                <label><input type="radio" name="speed" value="rapido" />⚡</label>
+            </div>
+            <button onclick="entrarCastillo()">Entrar al Castillo 🔥</button>
         </div>
-        <div class="form-group">
-            <label><input type="radio" name="speed" value="lento" checked>🐢</label>
-            <label><input type="radio" name="speed" value="rapido">⚡</label>
-        </div>
-        <button onclick="startGame()">Entrar al Castillo 🔥</button>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
