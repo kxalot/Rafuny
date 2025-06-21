@@ -1,42 +1,64 @@
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
-  background-image: url('background.jpg');
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-color: #000;
+    margin: 0;
+    padding: 0;
+    background-image: url('logo-bg.jpg');
+    background-size: cover;
+    background-position: top;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    text-align: center;
 }
 
-#welcome-screen, .main-screen {
-  background-color: rgba(0, 0, 0, 0.65);
-  padding: 20px;
-  border-radius: 20px;
-  max-width: 90%;
-  margin: 0 auto;
-  margin-top: 55vh;
-  text-align: center;
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+    padding-top: 300px;
 }
 
-input, select, button {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
+.container {
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 2em;
+    color: white;
+}
+
+.form-row {
+    margin: 10px 0;
+}
+
+input[type="text"], select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
 }
 
 button {
-  background-color: #ff00aa;
-  color: white;
-  cursor: pointer;
+    padding: 10px 20px;
+    background-color: #ff1493;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
 }
 
-button:hover {
-  opacity: 0.9;
+.speed-select {
+    margin: 10px;
 }
 
-.hidden {
-  display: none;
+.speed-select input {
+    display: none;
+}
+
+.speed-select label {
+    font-size: 2em;
+    padding: 0 10px;
+    cursor: pointer;
 }
